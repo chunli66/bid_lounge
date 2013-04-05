@@ -1,0 +1,2 @@
+module BidLoungeHelper
+end
