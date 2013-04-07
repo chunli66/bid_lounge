@@ -3,6 +3,10 @@ BidLounge::Application.routes.draw do
 
   get "bid_lounge/help"
 
+  get "bid_lounge/about"
+
+  get "bid_lounge/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
