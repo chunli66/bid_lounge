@@ -2,59 +2,38 @@ require 'spec_helper'
 
 describe "BidLounge" do
 
+	#let(:base_title) { "Bidding Lounge" }   #let function creates a variable corresponding to its argument
+	subject  { page }
+
 	describe "Home page" do
+		before { visit root_path }
 
-		it "should have the h1 'Bidding Lounge'" do
-			visit '/bid_lounge/home'
-			page.should have_selector('h1', :content => 'Bidding Lounge')
-		end
-
-		it "should have the title 'Home'" do
-			visit '/bid_lounge/home'
-			page.should have_selector('title', :content => "Bidding Lounge | Home")  #checks for the content "Bidding Lounge | Home" inside the HTML title tag
-		end
-
+		it { should have_selector('h1', content: 'Bidding Lounge') }
+		it { should have_selector('title', content: full_title('')) } 
+	#	it { should_not have_selector 'title', text: '| Home' }
 	end
 
+
 	describe "Help page" do
+		before { visit help_path }
 
-		it "should have the h1 'Help'" do
-			visit '/bid_lounge/help'
-			page.should have_selector('h1', :content => 'Help')
-		end
-
-		it "should have the title 'Help'" do
-			visit '/bid_lounge/help'
-			page.should have_selector('title', :content => "Bidding Lounge | Help") 
-		end
+		it { should have_selector('h1', content: 'Help') }
+		it { should have_selector('title', content: full_title('Help')) }
 	end
 
 	describe "About page" do
+		before { visit about_path }
 
-		it "should have the h1 'About Us'" do
-			visit '/bid_lounge/about'
-			page.should have_selector('h1', :content => 'About Us')
-		end
-
-		it "should have the title 'About Us'" do
-			visit '/bid_lounge/about'
-			page.should have_selector('title', :content => "Bidding Lounge | About Us")
-		end
+		it { should have_selector('h1', content: 'About Us') }
+		it { should have_selector('title', content: full_title('About Us')) }
 	end
-
+	
 	describe "Contact Us page" do
+		before { visit contact_path }
 
-		it "should have the h1 'Contact Us'" do
-			visit '/bid_lounge/contact'
-			page.should have_selector('h1', :content => 'Contact Us')
-		end
-
-		it "should have the title 'Contact Us'" do
-			visit '/bid_lounge/contact'
-			page.should have_selector('title', :content => "Bidding Lounge | Contact Us")
-		end
+		it { should have_selector('h1', content: 'Contact Us') }
+		it { should have_selector('title', content: full_title('Contact Us')) }
 	end
-
 end
 
 

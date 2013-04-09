@@ -1,11 +1,24 @@
 BidLounge::Application.routes.draw do
-  get "bid_lounge/home"
+ 
+ get "users/new"
 
-  get "bid_lounge/help"
+   # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+ root to: 'bid_lounge#home'
 
-  get "bid_lounge/about"
+ # match '/home',  to: 'bid_lounge#home'
 
-  get "bid_lounge/contact"
+
+ match '/signup',   to: 'users#new'
+
+ match '/help',     to: 'bid_lounge#help'
+
+ match '/about',    to: 'bid_lounge#about'
+
+ match '/contact',  to: 'bid_lounge#contact'
+
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -54,9 +67,6 @@ BidLounge::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

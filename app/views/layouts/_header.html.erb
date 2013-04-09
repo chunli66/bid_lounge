@@ -1,0 +1,14 @@
+<header class="navbar navbar-fixed-top">     						#indicates the header should go to the top of the page. "navbar" is CSS class. 
+		<div class="navbar-inner">										# div just divides the document into distinct parts
+			<div class="container">
+				<%= link_to "bidding lounge", root_path, id: "logo" %>		# link_to is a Rails helper to create links
+				<nav>
+					<ul class="nav pull-right">
+						<li><%= link_to "Home",    root_path %></li>			# a list (unordered list) of navigation links
+						<li><%= link_to "Help",    help_path %></li>
+						<li><%= link_to "Sign in", '#' %></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+</header>
